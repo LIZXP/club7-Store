@@ -2,6 +2,7 @@ import { Fragment } from "react";
 import { Outlet, Link } from "react-router-dom";
 import "./nav.styles.scss";
 import { ReactComponent as CrwnLogo } from "../../assets/crown.svg";
+//for nav bar
 const Nav = () => {
   return (
     <Fragment>
