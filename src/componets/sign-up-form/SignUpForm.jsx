@@ -11,9 +11,12 @@ const defaultFormFields = {
 function SignUpForm() {
   const [formField, setFormFields] = useState(defaultFormFields);
   const { displayName, email, password, confirmPassword } = formField;
-
+  console.log("====================================");
+  console.log(formField);
+  console.log("====================================");
   const handleChange = (e) => {
-    setFormFields();
+    const { name, value } = e.target;
+    setFormFields({ ...formField, [name]: value });
   };
 
   return (
@@ -24,8 +27,6 @@ function SignUpForm() {
         <input
           type="text"
           required
-          onpaste="return false;"
-          onCopy="return false"
           autoComplete="new-password"
           name="displayName"
           onChange={handleChange}
@@ -35,8 +36,6 @@ function SignUpForm() {
         <input
           type="email"
           required
-          onpaste="return false;"
-          onCopy="return false"
           autoComplete="new-password"
           name="email"
           onChange={handleChange}
@@ -46,8 +45,14 @@ function SignUpForm() {
         <input
           type="password"
           required
-          onpaste="return false;"
-          onCopy="return false"
+          onPaste={(e) => {
+            e.preventDefault();
+            return false;
+          }}
+          onCopy={(e) => {
+            e.preventDefault();
+            return false;
+          }}
           autoComplete="new-password"
           name="password"
           onChange={handleChange}
@@ -57,8 +62,14 @@ function SignUpForm() {
         <input
           type="password"
           required
-          onpaste="return false;"
-          onCopy="return false"
+          onPaste={(e) => {
+            e.preventDefault();
+            return false;
+          }}
+          onCopy={(e) => {
+            e.preventDefault();
+            return false;
+          }}
           autoComplete="new-password"
           name="confirmPassword"
           onChange={handleChange}
