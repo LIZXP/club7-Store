@@ -1,5 +1,6 @@
-import { async } from "@firebase/util";
 import React from "react";
+import FormInput from "../form-input/form-input.component";
+import "./signup.styles.scss";
 import { useState } from "react";
 import {
   createAuthUserWithEmailAndPassword,
@@ -45,11 +46,12 @@ function SignUpForm() {
     }
   };
   return (
-    <div>
-      <h1>Sign up with your email and password</h1>
+    <div className="sign-up-container">
+      <h2>Don't have an account?</h2>
+      <span>Sign up with your email and password</span>
       <form onSubmit={handleSubmit}>
-        <label>Display Name</label>
-        <input
+        <FormInput
+          label="Display Name"
           type="text"
           required
           autoComplete="new-password"
@@ -57,8 +59,9 @@ function SignUpForm() {
           onChange={handleChange}
           value={displayName}
         />
-        <label>Email</label>
-        <input
+
+        <FormInput
+          label="Email"
           type="email"
           required
           autoComplete="new-password"
@@ -66,8 +69,9 @@ function SignUpForm() {
           onChange={handleChange}
           value={email}
         />
-        <label>Password</label>
-        <input
+
+        <FormInput
+          label="Password"
           type="password"
           required
           onPaste={(e) => {
@@ -83,8 +87,9 @@ function SignUpForm() {
           onChange={handleChange}
           value={password}
         />
-        <label>Confirmed Password</label>
-        <input
+
+        <FormInput
+          label="Confirmed Password"
           type="password"
           required
           onPaste={(e) => {
