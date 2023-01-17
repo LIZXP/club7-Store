@@ -1,5 +1,6 @@
 import React from "react";
 import FormInput from "../form-input/form-input.component";
+import Button from "../button/button.component";
 import "./signup.styles.scss";
 import { useState } from "react";
 import {
@@ -105,7 +106,7 @@ function SignUpForm() {
           onChange={handleChange}
           value={confirmPassword}
         />
-        <button type="submit">Submit</button>
+        <Button type="submit">SIGN UP</Button>
       </form>
     </div>
   );
