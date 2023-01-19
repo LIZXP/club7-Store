@@ -24,8 +24,8 @@ function SignInForm() {
     await createUserDocFromAuth(user);
   };
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
+  const handleChange = (event) => {
+    const { name, value } = event.target;
     setFormFields({ ...formField, [name]: value });
   };
   const handleSubmit = async (e) => {
