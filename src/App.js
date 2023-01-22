@@ -7,7 +7,6 @@ const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Nav />}>
-        {/*using index=true is when show the local:3000 the nest route will show the same time */}
         <Route index={true} element={<Home />} />
         <Route path="auth" element={<Authentication />} />
       </Route>

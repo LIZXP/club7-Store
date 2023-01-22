@@ -7,6 +7,7 @@ import {
   createAuthUserWithEmailAndPassword,
   createUserDocFromAuth,
 } from "../../utils/firebase/firebase.utils";
+
 const defaultFormFields = {
   displayName: "",
   email: "",
@@ -17,6 +18,7 @@ const defaultFormFields = {
 function SignUpForm() {
   const [formField, setFormFields] = useState(defaultFormFields);
   const { displayName, email, password, confirmPassword } = formField;
+
   const resetForm = () => {
     setFormFields(defaultFormFields);
   };
@@ -36,6 +38,7 @@ function SignUpForm() {
         email,
         password
       );
+
       await createUserDocFromAuth(user, { displayName });
       resetForm();
     } catch (error) {
